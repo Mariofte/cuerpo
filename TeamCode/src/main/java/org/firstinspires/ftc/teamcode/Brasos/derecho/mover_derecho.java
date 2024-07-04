@@ -10,7 +10,7 @@ public class mover_derecho extends CommandOpMode {
         GamepadEx gamepad = new GamepadEx(gamepad1);
 
         braso_derecho braso_derecho = new braso_derecho(hardwareMap,telemetry);
-        mano_derecha mano_derecha = new mano_derecha(hardwareMap);
+        mano_derecha mano_derecha = new mano_derecha(hardwareMap,telemetry);
         //izquierda
         new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.A)
                 .whenPressed(() -> braso_derecho.hombro_x(3000,0.5));
@@ -38,8 +38,5 @@ public class mover_derecho extends CommandOpMode {
 
         new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.LEFT_BUMPER)
                 .whenPressed(mano_derecha::soltar);
-
-        new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.RIGHT_BUMPER)
-                .whenPressed(mano_derecha::agarrar);
     }
 }

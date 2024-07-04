@@ -1,15 +1,20 @@
 package org.firstinspires.ftc.teamcode.Brasos.izquierdo;
 
 import com.arcrobotics.ftclib.command.SubsystemBase;
+import com.arcrobotics.ftclib.hardware.SensorDistance;
 import com.arcrobotics.ftclib.hardware.ServoEx;
 import com.arcrobotics.ftclib.hardware.SimpleServo;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
+import org.firstinspires.ftc.robotcore.external.Telemetry;
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
+import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 
 public class mano_izquirda extends SubsystemBase {
     private final ServoEx mueca_der,mueca_izq,dedo1,dedo2,dedo3,dedo4,dedo5;
+    private SensorDistance sensor;
     private final HardwareMap hardwareMap;
+    private Telemetry telemetry;
     public mano_izquirda(HardwareMap hardwareMap) {
         //parameters
         this.hardwareMap = hardwareMap;
@@ -36,6 +41,9 @@ public class mano_izquirda extends SubsystemBase {
                 hardwareMap, "dedo5", 0, 180, AngleUnit.DEGREES);
         dedo5.setInverted(true);
     }
+    public boolean getSensor(){
+        return sensor.getDistance(DistanceUnit.MM) < 9;
+    }
     public void arriba(){
         mueca_der.turnToAngle(90);
         mueca_izq.turnToAngle(90);
@@ -57,5 +65,10 @@ public class mano_izquirda extends SubsystemBase {
         dedo3.turnToAngle(10);
         dedo4.turnToAngle(10);
         dedo5.turnToAngle(10);
+    }
+    @Override
+    public void periodic() {
+        telemetry.addData("Sensor", getSensor());
+        telemetry.update();
     }
 }
