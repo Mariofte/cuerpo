@@ -15,7 +15,7 @@ public class mano_izquirda extends SubsystemBase {
     private SensorDistance sensor;
     private final HardwareMap hardwareMap;
     private Telemetry telemetry;
-    public mano_izquirda(HardwareMap hardwareMap) {
+    public mano_izquirda(HardwareMap hardwareMap, Telemetry telemetry) {
         //parameters
         this.hardwareMap = hardwareMap;
         //servos

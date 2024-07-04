@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.Piernas.Isquierda;
+package org.firstinspires.ftc.teamcode.Piernas.Izquierda;
 
 import com.arcrobotics.ftclib.command.CommandBase;
 

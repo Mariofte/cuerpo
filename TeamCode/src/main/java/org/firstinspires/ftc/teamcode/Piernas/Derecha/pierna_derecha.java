@@ -11,8 +11,11 @@ import org.firstinspires.ftc.robotcore.external.Telemetry;
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 
 public class pierna_derecha extends SubsystemBase {
+    //motores
     private final DcMotorEx y,x,rodilla,pie;
+    //servos
     private final ServoEx levantar1,levantar2;
+    //
     private final HardwareMap hardwareMap;
     private final Telemetry telemetry;
     public pierna_derecha(HardwareMap hardwareMap, Telemetry telemetry) {

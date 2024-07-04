@@ -29,7 +29,7 @@ public class mover_derecho extends CommandOpMode {
         //derecha
         new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.DPAD_DOWN)
                 .whenPressed(() -> braso_derecho.codo(3000,-0.5));
-
+        //servos
         new GamepadButton(new GamepadEx(gamepad1), GamepadKeys.Button.DPAD_LEFT)
                 .whenPressed(mano_derecha::arriba);
 

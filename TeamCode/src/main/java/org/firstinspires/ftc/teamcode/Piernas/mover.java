@@ -6,7 +6,7 @@ import com.arcrobotics.ftclib.gamepad.GamepadEx;
 import com.arcrobotics.ftclib.gamepad.GamepadKeys;
 
 import org.firstinspires.ftc.teamcode.Piernas.Derecha.pierna_derecha;
-import org.firstinspires.ftc.teamcode.Piernas.Isquierda.pierna_izquierda;
+import org.firstinspires.ftc.teamcode.Piernas.Izquierda.pierna_izquierda;
 
 
 public class mover extends CommandOpMode {
